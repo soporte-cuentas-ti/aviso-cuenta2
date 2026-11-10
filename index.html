@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Esto era un simulacro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560;9..144,620&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light dark;
+    --paper:#f6f4ef;
+    --ink:#1b2230;
+    --ink-soft:#4a5468;
+    --line:#dcd7cc;
+    --card:#ffffff;
+    --amber:#b4701a;
+    --amber-bg:#fbefdc;
+    --teal:#1f6f6a;
+    --teal-bg:#e2efed;
+    --accent:#2b4a7e;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --paper:#14171d;
+      --ink:#e9ecf2;
+      --ink-soft:#a3abba;
+      --line:#2b303a;
+      --card:#1c2029;
+      --amber:#e3a556;
+      --amber-bg:#2e2416;
+      --teal:#5fb3ac;
+      --teal-bg:#12231f;
+      --accent:#7ea0d6;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#14171d;
+    --ink:#e9ecf2;
+    --ink-soft:#a3abba;
+    --line:#2b303a;
+    --card:#1c2029;
+    --amber:#e3a556;
+    --amber-bg:#2e2416;
+    --teal:#5fb3ac;
+    --teal-bg:#12231f;
+    --accent:#7ea0d6;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:clamp(24px,5vw,56px) clamp(20px,5vw,32px) 72px}
+
+  .flag{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:.82rem;font-weight:600;letter-spacing:.01em;
+    color:var(--amber);
+    background:var(--amber-bg);
+    border:1px solid color-mix(in srgb,var(--amber) 32%,transparent);
+    padding:7px 14px;border-radius:999px;
+    margin-bottom:28px;
+  }
+  .flag svg{width:16px;height:16px;flex:none}
+
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:620;
+    font-size:clamp(2.1rem,6.5vw,3.3rem);
+    line-height:1.08;
+    letter-spacing:-.01em;
+    margin:0 0 18px;
+  }
+  .lede{
+    font-size:clamp(1.05rem,2.6vw,1.22rem);
+    color:var(--ink-soft);
+    max-width:56ch;
+    margin:0 0 14px;
+  }
+  .reassure{
+    font-size:1rem;color:var(--ink-soft);
+    max-width:56ch;margin:0;
+  }
+
+  .rule{height:1px;background:var(--line);border:0;margin:44px 0}
+
+  h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:560;
+    font-size:clamp(1.4rem,3.6vw,1.75rem);
+    line-height:1.2;
+    margin:0 0 6px;
+  }
+  .section-note{color:var(--ink-soft);margin:0 0 26px;font-size:.98rem}
+
+  .tell{
+    display:grid;
+    grid-template-columns:34px 1fr;
+    gap:16px;
+    padding:20px 0;
+    border-top:1px solid var(--line);
+  }
+  .tell:first-of-type{border-top:0}
+  .tell .n{
+    font-family:"Fraunces",Georgia,serif;
+    font-size:1.25rem;font-weight:560;
+    color:var(--accent);
+    line-height:1.3;
+  }
+  .tell h3{margin:0 0 4px;font-size:1.02rem;font-weight:600}
+  .tell p{margin:0;color:var(--ink-soft);font-size:.97rem}
+  .tell .ex{
+    display:inline-block;margin-top:9px;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:.82rem;
+    background:var(--amber-bg);
+    color:var(--amber);
+    padding:3px 9px;border-radius:6px;
+    border:1px solid color-mix(in srgb,var(--amber) 22%,transparent);
+    word-break:break-all;
+  }
+
+  .do{
+    background:var(--teal-bg);
+    border:1px solid color-mix(in srgb,var(--teal) 28%,transparent);
+    border-radius:14px;
+    padding:clamp(22px,4vw,30px);
+    margin-top:14px;
+  }
+  .do h2{margin-top:0;color:var(--teal)}
+  .do ul{margin:0;padding-left:1.15em}
+  .do li{margin:10px 0;color:var(--ink)}
+  .do li::marker{color:var(--teal)}
+  .do b{font-weight:600}
+
+  footer{
+    margin-top:52px;padding-top:28px;border-top:1px solid var(--line);
+    color:var(--ink-soft);font-size:.9rem;
+  }
+  footer p{margin:0 0 8px;max-width:58ch}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+  <main class="wrap">
+
+    <span class="flag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+      Simulacro de seguridad interno
+    </span>
+
+    <h1>Era una prueba. Y está bien.</h1>
+    <p class="lede">El correo que te pedía restablecer tu contraseña de Microsoft no era real: formaba parte de un ejercicio de concienciación de nuestro equipo. No ha pasado nada y no se ha capturado ninguna contraseña.</p>
+    <p class="reassure">Esto no es una trampa para señalar a nadie. Picar en un correo así es de lo más común — por eso practicamos. Dedica un minuto a repasar las señales de abajo y la próxima vez las verás venir.</p>
+
+    <hr class="rule">
+
+    <h2>Lo que este correo tenía de sospechoso</h2>
+    <p class="section-note">Cuatro señales que estaban en el mensaje que acabas de abrir.</p>
+
+    <div class="tell">
+      <div class="n">1</div>
+      <div>
+        <h3>El remitente no era Microsoft</h3>
+        <p>El dominio después de la @ no coincidía con el oficial. Microsoft nunca te escribe desde dominios inventados parecidos.</p>
+        <span class="ex">seguridad@microsoft-soporte-cuentas.com</span>
+      </div>
+    </div>
+
+    <div class="tell">
+      <div class="n">2</div>
+      <div>
+        <h3>Urgencia y amenaza</h3>
+        <p>“Tu cuenta se bloqueará en 24 horas.” La prisa es la herramienta favorita del phishing: busca que actúes antes de pensar. Las empresas serias no te presionan así.</p>
+      </div>
+    </div>
+
+    <div class="tell">
+      <div class="n">3</div>
+      <div>
+        <h3>Saludo genérico</h3>
+        <p>“Estimado usuario.” Un aviso real de tu cuenta suele dirigirse a ti por tu nombre y referirse a datos concretos, no a “usuario” en general.</p>
+      </div>
+    </div>
+
+    <div class="tell">
+      <div class="n">4</div>
+      <div>
+        <h3>El enlace no llevaba a Microsoft</h3>
+        <p>Si pasas el ratón por encima del botón (sin hacer clic) y miras abajo a la izquierda, la dirección real no empezaba por un dominio de Microsoft. Eso es lo que acabas de comprobar al llegar aquí.</p>
+      </div>
+    </div>
+
+    <div class="do">
+      <h2>Qué hacer la próxima vez</h2>
+      <ul>
+        <li><b>No hagas clic.</b> Si dudas, abre tú mismo microsoft.com o la app, sin usar el enlace del correo.</li>
+        <li><b>Mira el remitente completo</b>, no solo el nombre que se muestra. El dominio tras la @ es lo que cuenta.</li>
+        <li><b>Desconfía de la prisa.</b> Amenazas de bloqueo, multas o plazos cortísimos son casi siempre señal de engaño.</li>
+        <li><b>Repórtalo.</b> Reenvía el correo sospechoso a quien corresponda en el equipo o usa el botón de “Notificar phishing” de Outlook. Reportar es acertar.</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>Este ejercicio es interno y voluntario en su aprendizaje. No se ha guardado ninguna credencial ni se comparte quién hizo clic de forma individual: los resultados se comunican de forma agregada.</p>
+      <p>¿Dudas? Habla con la persona responsable de seguridad del equipo.</p>
+    </footer>
+
+  </main>
+</body>
+</html>
